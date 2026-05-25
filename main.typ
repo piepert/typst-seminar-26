@@ -523,7 +523,6 @@
 
 #slide[
     = Ressourcen
-    #place(right, [#todo[QR Code für Folien mit shortlink]])
     - *dieser Vortrag, Aufgaben, Typst-Source*:\ https://github.com/piepert/typst-seminar-26
 
     - *Typst-Seite, Dokumentation und Templates*:\ https://typst.app/, https://typst.app/docs, https://typst.app/universe
@@ -531,6 +530,15 @@
     - *offizielles Typst-Tutorial*:\ https://typst.app/docs/tutorial/
 
     - *Typst Examples, ein ausführliches Tutorial an Beispielen*:\ https://sitandr.github.io/typst-examples-book/book/
+]
+
+#slide[
+    #set align(center + horizon)
+    = Folien und Inhalte
+
+    #image("img/qrcode_slides.svg", height: 7cm)
+
+    https://shorturl.at/OZ2Kp
 ]
 
 #slide[
