@@ -1,0 +1,107 @@
+{
+  "name": "typst vortrag",
+  "description": "modi",
+  "type": "NEA",
+  "automaton": {
+    "acceptCache": [],
+    "simulationInput": [],
+    "Alphabet": [
+      "$...$",
+      "#...",
+      "[...]"
+    ],
+    "StackAlphabet": [
+      "|"
+    ],
+    "States": [
+      {
+        "ID": 1,
+        "Name": "Content",
+        "x": 150,
+        "y": 190,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 1,
+            "Target": 2,
+            "x": 50,
+            "y": 0,
+            "Labels": [
+              "$...$"
+            ]
+          },
+          {
+            "Source": 1,
+            "Target": 3,
+            "x": 30,
+            "y": -30,
+            "Labels": [
+              "#..."
+            ]
+          }
+        ],
+        "Start": true
+      },
+      {
+        "ID": 2,
+        "Name": "Math",
+        "x": 310,
+        "y": 100,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 2,
+            "Target": 3,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "#..."
+            ]
+          },
+          {
+            "Source": 2,
+            "Target": 1,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              "[...]"
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 3,
+        "Name": "Script",
+        "x": 310,
+        "y": 320,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 3,
+            "Target": 2,
+            "x": -100,
+            "y": 10,
+            "Labels": [
+              "$...$"
+            ]
+          },
+          {
+            "Source": 3,
+            "Target": 1,
+            "x": 50,
+            "y": 0,
+            "Labels": [
+              "[...]"
+            ]
+          }
+        ],
+        "Start": false
+      }
+    ],
+    "lastInputs": []
+  }
+}
