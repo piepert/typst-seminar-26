@@ -1024,7 +1024,63 @@ error: expected semicolon or line break
 
 #slide[
     = Counter, States, Context
-    - pure functions: keine globalen Variablen, nur Konstanten
+
+    #set text(size: 0.95em)
+    #typst-example(code-size: 0.575em, columns: (74%, 1fr), ```typ
+    #let arr = (4, 5, 1, 3, 2)
+    #let bubble-sort(array) = {
+        if array.len() < 2 { return array }
+
+        let i = 0
+        while i < array.len() - 1 {
+            if array.at(i) > array.at(i + 1) {
+                (array.at(i), array.at(i + 1)) = (array.at(i + 1), array.at(i))
+                i = 0
+            } else { i += 1 }
+        }
+        return array
+    }
+
+    #arr \
+    #(arr = bubble-sort(arr))
+    #arr
+    ```)
+]
+
+#slide[
+    = Counter, States, Context
+    #set text(size: 0.8em)
+    #task(title: [Aufgabe 6])[
+        Stellen Sie Vermutungen an, was der folgende Code bewirkt!
+    ]
+
+    #show: columns
+    #yes-codly(```typ
+    #let count-up = 0
+
+    #let increment() = {
+        count-up = count-up + 1
+    }
+
+    #count-up #increment() #count-up
+    ```)
+
+    #show: later
+
+    #colbreak()
+    ```
+error: variables from outside the function are read-only and cannot be modified
+  ┌─ test.typ:4:4
+  │
+4 │     count-up = count-up + 1
+  │     ^^^^^^^^
+
+    ```
+]
+
+#slide[
+    = Counter, States, Context
+    - pure functions: keine globalen Variablen, nur "Konstanten"
     - speichern von Zuständen mittels `counter` und `state`
     - Abrufen von kontextabhängigen Werten mittels `context`-Scopes
 
@@ -1059,7 +1115,7 @@ error: expected semicolon or line break
 #slide[
     = Praxisbeispiel: Aufgabenelement
 
-    #typst-example(code-size: 0.8em, ```typ
+    #typst-example(columns: (60%, 40%), code-size: 0.8em, ```typ
     #let task(body) = {
         show: block.with(
             fill: gray.lighten(75%))
@@ -1073,7 +1129,7 @@ error: expected semicolon or line break
 #slide[
     = Praxisbeispiel: Aufgabenelement
 
-    #typst-example(code-size: 0.8em, ```typ
+    #typst-example(columns: (60%, 40%), code-size: 0.7em, ```typ
     #let task(body) = {
         show: block.with(
             fill: gray.lighten(75%),
@@ -1088,11 +1144,12 @@ error: expected semicolon or line break
 #slide[
     = Praxisbeispiel: Aufgabenelement
 
-    #typst-example(code-size: 0.75em, ```typ
+    #typst-example(columns: (60%, 40%), code-size: 0.6em, ```typ
     #let task(body) = {
         show: block.with(
             fill: gray.lighten(75%),
             inset: 0.5em)
+
         strong[Aufgabe #context counter("tc").display(): ]
         body
     }
@@ -1104,12 +1161,14 @@ error: expected semicolon or line break
 #slide[
     = Praxisbeispiel: Aufgabenelement
 
-    #typst-example(code-size: 0.75em, ```typ
+    #typst-example(columns: (60%, 40%), code-size: 0.6em, ```typ
     #let task(body) = {
         show: block.with(
             fill: gray.lighten(75%),
             inset: 0.5em)
+
         counter("tc").step()
+
         strong[Aufgabe #context counter("tc").display(): ]
         body
     }
