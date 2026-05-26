@@ -27,7 +27,7 @@
     footer: text(
         size: 0.5em,
     )[Hat La!TeX ausgedient? Eine kleine Einführung in Typst -- Tristan Pieper (#link("mailto:tristan.pieper@uni-rostock.de"))],
-    date: datetime(year: 2025, month: 6, day: 13),
+    date: datetime(year: 2026, month: 5, day: 26),
 
     outline-title-text: [Inhalt],
     show-outline: false,
@@ -713,8 +713,8 @@
 #slide[
     = show-Regeln:
     - ebenfalls nur für Builtins
-    - "`show x: y`" heißt "wende Funktion $y$ auf jedes Element $x$ an"
     - "`show: y`" heißt "wende Funktion $y$ auf den gesamten folgenden Content im Scope an"
+    - "`show x: y`" heißt "wende Funktion $y$ auf jedes Element $x$ an"
     - $y$ kann auch Lambdafunktion sein: `(a1, a2, ..) => { ... }`
 
     - `.with()` auf Funktionen → funktionale Applikation
@@ -1013,7 +1013,7 @@ error: expected semicolon or line break
 #slide[
     #set text(size: 0.95em)
     #task(time: [10 min.])[
-        Im Ordner `Aufgabe 4/` ist ein Typst-Dokument gegeben.
+        Im Ordner `Aufgabe 5/` ist ein Typst-Dokument gegeben.
         + Fügen Sie anhand der Kommentare weitere set- und show-Regeln hinzu.
 
         + Lagern Sie das Page-Setup in eine Datei `template.typ` aus. Die Formatierung des Dokuments soll rein im Template stattfinden, der Inhalt des Dokuments in der Hauptdatei `main.typ`.
